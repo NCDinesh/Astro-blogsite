@@ -1,10 +1,10 @@
 let navData=[
   {
-    title:"About",
+    name:"About",
     path:"about/"
   },
   {
-    title:"blog",
+    name:"blog",
     path:"blog/"
   },
 
