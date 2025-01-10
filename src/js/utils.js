@@ -10,3 +10,7 @@ export function slugify(text) {
     .replace(/--+/g, '-') // Replace consecutive dashes with one dash
     .replace(/-+$/, ''); // Remove trailing dashes
 }
+
+export function formatDate(date){
+  return new Date(date).toLocaleDateString('en-US',{timeZone: "UTC"})
+}
