@@ -15,16 +15,17 @@ import Link from "./Link.astro";
           <Link
             text={item.name}
             href={item.path}
-            style="secondary"
+            style="primary"
             isFilled={false}
             data-navLink
-            icon={{
-              name: "ic:baseline-android",
-              side: "right",
-            }}
           />
         ))
       }
     </ul>
   </div>
 </nav>
+
+<!-- Ensure this is at the bottom to execute after page load -->
+<script>
+  import "../js/nav.js";
+</script>
