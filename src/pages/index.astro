@@ -1,6 +1,12 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "./../assets/global.css";
+import PostCard from "../components/PostCard.astro";
+import Link from "../components/Link.astro";
+import { formatBlogPosts } from "../js/utils";
+
+const allPosts = await Astro.glob("./blog/*.md");
+const formattedPosts = formatBlogPosts(allPosts, { limit: 3 });
 ---
 
 <!doctype html>
@@ -20,7 +26,43 @@ import "./../assets/global.css";
 
   <body>
     <MainLayout title="Hey there">
-      <p class="para">This is a paragraph <span>index</span></p>
+      <section class="container about" aria-label="About Me">
+        <img
+          src="/images/black.jpg"
+          alt="My headshot"
+          width="200"
+          height="330"
+        />
+
+        <div class="content">
+          <h1 class="h1">My Blog</h1>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex animi
+            praesentium repellat aut illum soluta suscipit perferendis. Tempora,
+            excepturi quis quisquam fugiat assumenda, modi sapiente debitis
+            molestiae possimus consequuntur, obcaecati vitae rerum id.
+            Blanditiis saepe voluptatibus quis vitae quasi dolorem.
+          </p>
+          <Link href="/about" style="primary" text="👋 About Me" />
+        </div>
+      </section>
+
+      <section class="container" aria-label="New Blog Posts">
+        <h2 class="h1">New Blog Posts</h2>
+
+        <div class="post-containter">
+          {
+            formattedPosts.map((post) => (
+              <PostCard
+                frontmatter={post.frontmatter}
+                url={post.url}
+                tagType="h3"
+              />
+            ))
+          }
+        </div>
+      </section>
     </MainLayout>
   </body>
 </html>

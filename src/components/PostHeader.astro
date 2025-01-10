@@ -1,9 +1,8 @@
 ---
 import { Image } from "@astrojs/image/components";
+import { slugify, formatDate } from "../js/utils";
 
 const { title, description, date, category, author, image } = Astro.props;
-
-import { slugify, formatDate } from "../js/utils";
 ---
 
 <header>

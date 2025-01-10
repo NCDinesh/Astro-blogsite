@@ -480,10 +480,10 @@ button {
     --accent: var(--txt);
   }
 
-  & [aria-hidden="true"] {
+  /* & [aria-hidden="true"] {
     margin-inline: calc(var(--space-md) * -1);
     margin-block: var(--space-md);
-  }
+  } */
 
   & img {
     box-shadow: var(--shadow-sm);
