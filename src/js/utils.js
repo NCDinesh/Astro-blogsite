@@ -1,43 +1,52 @@
 export function slugify(text) {
   return text
-    .toString() // Convert to string
-    .trim() // Remove leading/trailing whitespace
-    .toLowerCase() // Convert to lowercase
-    .replace(/[^a-z0-9\s-]/g, '') // Remove invalid characters
-    .replace(/\s+/g, '-') // Replace spaces with dashes
-    .replace(/-+/g, '-') // Remove consecutive dashes
-    .replace(/[^\w-]+/g, '') // Remove non-word characters (except dashes)
-    .replace(/--+/g, '-') // Replace consecutive dashes with one dash
-    .replace(/-+$/, ''); // Remove trailing dashes
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
 }
 
-export function formatDate(date){
-  return new Date(date).toLocaleDateString('en-US',{timeZone: "UTC"})
+export function formatDate(date) {
+  return new Date(date).toLocaleDateString('en-US', {
+    timeZone: "UTC",
+  })
 }
 
-export function formatBlogPosts(posts,{filterOutDrafts=false,
-  filterOutFuturePosts=true,
-  sortByDate=true,
-limit=undefined
-}={}){
-const filteredPosts = posts.reduce((acc,post) => {
-  const {date,draft}=post.frontmatter;
+export function formatBlogPosts(posts, {
+  filterOutDrafts = true,
+  filterOutFuturePosts = true,
+  sortByDate = true,
+  limit = undefined,
+} = {}) {
 
-  if(filterOutDrafts && draft) return acc;
-  if(filterOutFuturePosts && new Date(date) > new Date()) return acc;
+  const filteredPosts = posts.reduce((acc, post) => {
+    const { date, draft } = post.frontmatter;
+    // filterOutDrafts if true
+    if (filterOutDrafts && draft) return acc;
 
-  acc.push(post)
-  return acc;
-},[])
+    // filterOutFuturePosts if true
+    if (filterOutFuturePosts && new Date(date) > new Date()) return acc;
 
-if(sortByDate){ filteredPosts.sort((a,b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))}
-else{
-  filteredPosts.sort(()=>Math.random()-0.5)
-}
+    // add post to acc
+    acc.push(post)
 
-if(typeof limit==="number"){
-  return filteredPosts.slice(0,limit);
-}
+    return acc;
+  }, [])
 
-return filteredPosts;
+  // sortByDate or randomize
+  if (sortByDate) {
+    filteredPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
+  } else {
+    filteredPosts.sort(() => Math.random() - 0.5)
+  }
+
+  // limit if number is passed
+  if (typeof limit === "number") {
+    return filteredPosts.slice(0, limit);
+  }
+  return filteredPosts;
+
 }

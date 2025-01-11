@@ -1,7 +1,12 @@
 ---
-import { Icon } from "astro-icon/components";
-import navData from "../data/navData";
+// library imports
+import { Icon } from "astro-icon";
+
+// component imports
 import Link from "./Link.astro";
+
+// data imports
+import navData from "../data/navData";
 ---
 
 <nav aria-label="Primary">
@@ -25,7 +30,6 @@ import Link from "./Link.astro";
   </div>
 </nav>
 
-<!-- Ensure this is at the bottom to execute after page load -->
 <script>
   import "../js/nav.js";
 </script>

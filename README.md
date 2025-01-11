@@ -1,48 +1,15 @@
-# Astro Starter Kit: Basics
+# Astro Blog Tutorial
 
-```sh
-npm create astro@latest -- --template basics
-```
+In this series, I’ll show you how to get started with the web framework Astro by building a custom blog from scratch. We’ll cover everything from building simple UI components to advanced routing, pagination, generating an RSS feed, incorporating React, Tailwind, or a CMS, and more!. In the end, we’ll publish the finished code to Netlify and I'll show you how to update your blog with each new post.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+- Demo site: https://codinginpublic.dev/projects/astro-blog-tutorial/
+- YouTube Astro Blog Course playlist: https://youtube.com/playlist?list=PLoqZcxvpWzzeRwF8TEpXHtO7KYY6cNJeF
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---------------------------------------
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+🌐 Connect With Me 🌐
+- Website: https://codinginpublic.dev
+- Blog: https://chrispennington.blog
+- Twitter: https://twitter.com/cpenned
+- Patreon: https://www.patreon.com/coding_in_public
+- Buy Me a Coffee: https://www.buymeacoffee.com/chrispennington

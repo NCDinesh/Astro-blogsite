@@ -1,10 +1,11 @@
 ---
+// component imports
 import Link from "./Link.astro";
 
 const { prevUrl, nextUrl } = Astro.props;
 ---
 
-<nav aria--label="Blog Pages">
+<nav aria-label="Blog pages">
   {
     prevUrl && (
       <Link
@@ -15,12 +16,11 @@ const { prevUrl, nextUrl } = Astro.props;
         isFilled={false}
         icon={{
           name: "tabler:arrow-big-left-line",
-          side: "right",
+          side: "left",
         }}
       />
     )
   }
-
   {
     nextUrl && (
       <Link
@@ -31,17 +31,9 @@ const { prevUrl, nextUrl } = Astro.props;
         isFilled={false}
         icon={{
           name: "tabler:arrow-big-right-line",
-          side: "left",
+          side: "right",
         }}
       />
     )
   }
 </nav>
-
-<style>
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem; /* Adjust spacing between links */
-  }
-</style>

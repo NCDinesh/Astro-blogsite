@@ -1,13 +1,12 @@
-let navData=[
+const navData = [
   {
-    name:"About",
-    path:"/about"
+    name: "About",
+    path: "/about/",
   },
   {
-    name:"blog",
-    path:"/blog"
+    name: "Blog",
+    path: "/blog/",
   },
-
 ]
 
-export default navData
+export default navData;
